@@ -1,11 +1,6 @@
-#include <cstring>
-#include "our_descriptor.h"
-#include "remapper.h"
-#include "globals.h"
+#include <stdint.h>
+#include <string.h>
 
-// Xbox 360 有线控制器 VID/PID
-#define XINPUT_VID 0x045E
-#define XINPUT_PID 0x028E
 
 // XInput 报告结构（固定20字节）
 typedef struct __attribute__((packed)) {
