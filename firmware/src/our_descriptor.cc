@@ -4,6 +4,8 @@
 #include "our_descriptor.h"
 #include "ps_auth.h"
 #include "remapper.h"
+#include "xinput_device.h"
+
 
 const uint8_t REPORT_ID_MOUSE = 1;
 const uint8_t REPORT_ID_KEYBOARD = 2;
@@ -696,6 +698,15 @@ const our_descriptor_def_t our_descriptors[] = {
         .clear_report = xac_compat_clear_report,
         .default_value = ps4_stadia_default_value,  // sic
     },
+    {
+        .idx = 6,
+        .descriptor = our_report_descriptor_xinput,
+        .descriptor_length = sizeof(our_report_descriptor_xinput),
+        .vid = XINPUT_VID,
+        .pid = XINPUT_PID,
+        .handle_received_report = do_handle_received_report,
+        .clear_report = xinput_clear_report,
+    },
 };
 
 const uint8_t config_report_descriptor[] = {
@@ -753,6 +764,7 @@ uint8_t const boot_kb_report_descriptor[] = {
     0x95, 0x05,        //   Report Count (5)
     0x91, 0x03,        //   Output (Const,Var,Abs,No Wrap,Linear,Preferred State,No Null Position,Non-volatile)
     0xC0,              // End Collection
-};
+}
+;
 
 const uint32_t boot_kb_report_descriptor_length = sizeof(boot_kb_report_descriptor);
