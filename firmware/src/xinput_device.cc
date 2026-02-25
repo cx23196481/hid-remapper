@@ -64,3 +64,5 @@ void xinput_clear_report(uint8_t* report, uint8_t report_id, uint16_t len) {
     report[0] = 0x00;
     report[1] = 0x14;
 }
+
+const uint32_t our_report_descriptor_xinput_length = sizeof(our_report_descriptor_xinput);
