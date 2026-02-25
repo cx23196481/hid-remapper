@@ -173,6 +173,7 @@ add_executable(remapper_serial
     src/tick.cc
     src/activity_led.cc
     src/ps_auth.cc
+    src/xinput_device.cc
 )
 target_include_directories(remapper_serial PRIVATE
     src
