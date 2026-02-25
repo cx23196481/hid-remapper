@@ -764,7 +764,6 @@ uint8_t const boot_kb_report_descriptor[] = {
     0x95, 0x05,        //   Report Count (5)
     0x91, 0x03,        //   Output (Const,Var,Abs,No Wrap,Linear,Preferred State,No Null Position,Non-volatile)
     0xC0,              // End Collection
-}
-;
+};
 
 const uint32_t boot_kb_report_descriptor_length = sizeof(boot_kb_report_descriptor);
