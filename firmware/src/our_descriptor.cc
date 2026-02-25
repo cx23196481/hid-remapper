@@ -701,7 +701,7 @@ const our_descriptor_def_t our_descriptors[] = {
     {
         .idx = 6,
         .descriptor = our_report_descriptor_xinput,
-        .descriptor_length = sizeof(our_report_descriptor_xinput),
+        .descriptor_length = our_report_descriptor_xinput_length,
         .vid = XINPUT_VID,
         .pid = XINPUT_PID,
         .handle_received_report = do_handle_received_report,
